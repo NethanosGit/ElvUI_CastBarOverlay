@@ -103,12 +103,15 @@ end
 --Configure castbar text position and alpha
 local function ConfigureText(unit, castbar)
 	local db = E.db.CBO[unit]
-
-	if db.hidetext then -- Hide
+	if db.hidespelltext then
 		castbar.Text:SetAlpha(0)
-		castbar.Time:SetAlpha(0)
-	else -- Show
+	else
 		castbar.Text:SetAlpha(1)
+	end
+
+	if db.hidetimetext then
+		castbar.Time:SetAlpha(0)
+	else
 		castbar.Time:SetAlpha(1)
 	end
 
